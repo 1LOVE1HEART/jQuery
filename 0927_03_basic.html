@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>
+                        <h3>td4</h3>
+                    </td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>
+                        <h2>td3</h2>
+                    </td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            // $('td').css("background", "green")
+
+            $('td:even').css("background", "green")
+            $('td:odd').css("background", "yellow")
+
+            $('td:eq(7)').css("background", "red")
+            //[0]開始
+            $('td:first').css("background", "red")
+            $('td:last').css("background", "red")
+
+            $('td:gt(22)').css("background", "purple")
+            $('td:lt(2)').css("background", "purple")
+
+            $('td:lt(-24)').css("background", "rgb(100,100,100)")
+
+            // :gt() - 選取大於第 n 個的(也可以給負數)
+            // :lt() - 選取小於第 n 個的(也可以給負數,從後面數來)
+
+            $(':header').css("color", "rgb(34,234,234)")
+            // 冒號前沒東西就是指dom裡全部的header
+
+
+
+
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
