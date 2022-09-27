@@ -28,10 +28,23 @@
         <script>
             // $('.level-1').children().css("outline", "blue 1px solid");
             // 像是css > 只選到子層一層
-            $('.level-1').find('li').css("outline", "blue 1px solid");
+            // $('.level-1').find('li').css("outline", "blue 1px solid");
             // 像是css 空格 包含子&孫層
             // $('.level-1').find(".item-002").css("outline", "blue 1px solid");
             // $('.level-1').find(".item-02").css("outline", "blue 1px solid");
+
+            // $('.item-002').closest(".level-3").css("outline", "blue 1px solid");
+            // $('.item-002').closest(".level-1").css("outline", "blue 1px solid");
+            // $('.item-002').parentsUntil("body").css("outline", "blue 1px solid");
+            // 不知道user點哪個,如果所有都用id綁會累死,所以每個點都綁定同個function,再去找它的父&子層
+
+            // $('.item-001').next().next().css("outline", "blue 1px solid");      
+
+            $('.item-001').parent().parent().parent().children().not(".level-2").not(".item-2").css("outline", "red 1px solid");   
+
+
+
+            
         </script>
     
     
