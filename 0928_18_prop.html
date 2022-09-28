@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click</button>
+    <input type="checkbox" checked>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script>
+        $('button').click(function () {
+            console.log('attr:', $('input').attr('checked'));
+            console.log('prop', $('input').prop('checked'));
+        })
+            // 不翻譯屬性,翻狀態
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <ul class="level-1">
         <li class="item-1">item-1</li>
         <li class="item-2">item-2</li>
@@ -31,7 +32,7 @@
             // $('.level-1').find('li').css("outline", "blue 1px solid");
             // 像是css 空格 包含子&孫層
             // $('.level-1').find(".item-002").css("outline", "blue 1px solid");
-            // $('.level-1').find(".item-02").css("outline", "blue 1px solid");
+            // $('.level-1').find(".item-02, .item-002").css("outline", "blue 1px solid");
 
             // $('.item-002').closest(".level-3").css("outline", "blue 1px solid");
             // $('.item-002').closest(".level-1").css("outline", "blue 1px solid");
@@ -42,8 +43,11 @@
 
             $('.item-001').parent().parent().parent().children().not(".level-2").not(".item-2").css("outline", "red 1px solid");   
 
-
-
+            $('li').each((index, item)=>{
+            console.log('inex', index);
+            console.log('item', item);
+            console.log('index,item', $(item).text());
+        })
             
         </script>
     
