@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .train {
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            width: 500%;
+            transform: translateX(0px);
+            transition:  .4s;
+        }
+        .train li img {
+            width: 100%;
+            object-fit: cover;
+        }
+        .slider-dots{
+            position: absolute;
+            bottom:0;
+            left: 0;
+            right: 0;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .slider-dots li{
+            width: 40px;
+            height: 10px;
+            border: 1px solid rgb(255, 255, 255);
+            margin: 0 4px;
+        }
+        .slider-dots li:nth-child(1){
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="train">
+            <li><img src="./images/slide1.jpg" alt=""></li>
+            <li><img src="./images/slide2.jpg" alt=""></li>
+            <li><img src="./images/slide3.jpg" alt=""></li>
+            <li><img src="./images/slide4.jpg" alt=""></li>
+            <li><img src="./images/slide5.jpg" alt=""></li>
+        </ul>
+
+        <ul class="slider-dots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            $(".slider-dots li").click(function(){
+                console.log($(this).index());
+                const index = $(this).index();
+                const movex = -800 * index;
+                console.log(movex);
+
+                $(".train").css("transform", `translateX(${movex}px)`);
+
+                $(this).css('background', '#fff').siblings().css("background", "transparent");                
+           
+            })
+            
+        </script>
+</body>
+</html>
