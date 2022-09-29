@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <select name="city" id="city">
+            <option value="0">基隆</option>
+            <option value="1">台北</option>
+            <option value="2">新北</option>
+        </select>
+        <select name="district" id="district">
+            <option value="0">七堵</option>
+            <option value="1">中正</option>
+            <option value="2">暖暖</option>
+        </select>
+    </form>
+
+
+
+   
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    
+        <script>
+            let districtArray = [
+                ['七堵', '中正', '暖暖'],
+                ['中正', '大安', '信義'],
+                ['蘆洲', '三重', '新店'],
+            ];
+
+            $("#city").change(function(){
+                console.log($(this).val());
+                const citynumber = $(this).val();
+                
+                console.log(districtArray[citynumber]);
+
+                const districtnum = districtArray[citynumber];
+
+                $('#district').empty();
+                //append 比較好 資料(行政區)不一定是固定數量,然後迴圈
+                for (let i = 0; i < districtnum.length; i++) {
+                    $('#district').append(`<option value="${i}">${districtnum[i]}區</option>`)
+                }
+                // $('#district').append(`<option value="0">${districtnum[0]}</option>`)
+                // $('#district').append(`<option value="1">${districtnum[1]}</option>`)
+                // $('#district').append(`<option value="2">${districtnum[2]}</option>`)
+
+
+
+                // $('#district option').eq(0).text(districtnum[0]);
+                // $('#district option').eq(1).text(districtnum[1]);
+                // $('#district option').eq(2).text(districtnum[2]);
+                
+            })
+            
+        </script>
+</body>
+</html>
