@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .dot{
+            width: 16px;
+            height: 16px;
+            background:blue;
+            border-radius: 50%;
+            position: absolute;
+            /* 設定"圓點"外觀 */
+        }
+    </style>
+<body>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            // 觸發事件
+            $('html').click(function(e){
+                // 獲取點擊座標
+                let left = e.pageX;
+                let top = e.pageY;
+                // append上去
+                $('body').append("<div class='dot'></div>")
+                // 最新(後last)的dot定位
+                $(".dot").last().css({
+                    "left": left,
+                    "top": top
+                })
+            })
+            
+        </script>
+    
+</body>
+</html>

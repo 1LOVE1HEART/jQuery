@@ -7,19 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <!-- preped -->
-        <li>item1</li>
-        <li>item2</li>
-        <!-- append -->
-    </ul>
+    <div class="container">
+        <button class="btn">click</button>
+        <ul>
+            <!-- preped -->
+            <li>item1</li>
+            <li>item2</li>
+            <!-- append -->
+        </ul>
+    </div>
+
+
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
     <script src="./js/jquery-3.6.1.min.js"></script>
         <script>
-            $('ul').append('<li>item4</li>');
-            $('ul').append('<li>item3</li>');
-            $('ul').prepend('<li>item0</li>'); 
+            // $('ul').append('<li>item4</li>');
+            // $('ul').append('<li>item3</li>');
+            // $('ul').prepend('<li>item0</li>'); 
+
+            let x = 3;
+            // 放外面做全域變數其實不好,但先教這樣
+            $("button").click(function(){
+                
+                $("ul").append("<li>item" + x + "</li>");
+
+                x = x + 1;
+            })
         </script>
 </body>
 </html>
