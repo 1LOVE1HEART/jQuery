@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn">click</button>
+        <ul>
+            <!-- preped -->
+            <li>item1</li>
+            <li>item2</li>
+            <!-- append -->
+        </ul>
+    </div>
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+
+            let x = 3;
+            // 放外面做全域變數其實不好,但先教這樣
+            $("button").click(function(){
+                
+                $("ul").append("<li>item" + x + "</li>");
+
+                x = x + 1;
+            })
+
+            $('li').click(function(){
+                console.log('li', $(this).text());
+                console.log('end');
+                // 新增的append,無法console,在開始讀完dom了
+            })
+            
+
+            $('ul').on('click', 'li', function(){
+                console.log('li', $(this).text());
+                console.log('end');
+            })
+            
+            
+        </script>
+</body>
+</html>
