@@ -47,9 +47,15 @@
                 const windowH = $(window).height();
                 const bodytotal = $('body').height();
 
-                const percentage = $(window).scrollTop() / ($('body').height() - windowH) * 100 + '%';
+                const percentage = $(window).scrollTop() / ($('body').height() - windowH) * 100 ;
+                // const percentage = $(window).scrollTop() / ($('body').height() - windowH) * 100 + '%';
 
-                $('.box').css('width', percentage);
+                $('.box').css('width', percentage + '%');
+                // $('.box').css('width', percentage );
+
+                if(percentage > 50){
+                    
+                }
                 
             })
         </script>
