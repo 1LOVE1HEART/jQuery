@@ -5,16 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        td {
+            width: 150px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+    <table class="wrap">
+        <tr>
+            <td class="autobg">div1</td>
+            <td class="autobg">div2</td>
+            <td class="autobg">div3</td>
+            <td class="autobg">div4</td>
+        </tr>
+        <tr>
+            <td class="autobg">div5</td>
+            <td class="autobg">div6</td>
+            <td class="autobg">div7</td>
+            <td class="autobg">div8</td>
+        </tr>
+        <tr>
+            <td class="autobg">div9</td>
+            <td class="autobg">div10</td>
+            <td class="autobg">div11</td>
+            <td class="autobg">div12</td>
+        </tr>
+    </table>
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
     <script src="./js/jquery-3.6.1.min.js"></script>
         <script>
-            $("").click(function(){
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
 
-            })
+        function getRBGA() {
+            return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`
+        }
 
-            // 練習4提示 :除了我以外 sibilings??
+        const elements = document.querySelectorAll('.autobg');
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundImage = getRBGA();
+        });
+
+        $('.autobg').each(function (index, currentElement) {
+        currentElement.style.backgroundImage = getRBGA();
+        });
+
+    
+
+        $(".wrap td").click(function(e){
+            // console.log($(".wrap td").index(this));
+            const theBox = $(".wrap td").index(this);
+            console.log(theBox);
+            $(`td:gt(${theBox})`).css("background", "lightblue");
+
+        })
+
+        // $('td:gt()').css("background", "b")
+
+            
         </script>
 </body>
 </html>
