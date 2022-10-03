@@ -21,6 +21,7 @@
     <button id="btnAdd">Add</button>
     <button id="btnRemove">Remove</button>
     <button id="btnToggle">toggle</button>
+    <button id="btnHas">toggle</button>
     <div class="box"></div>
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
@@ -34,6 +35,15 @@
             })
             $('#btnToggle').click(function () {
                 $('.box').toggleClass('active')
+            })
+            $('#btnHas').click(function () {
+                console.log('has class? ',$('.box').hasClass('active'))
+                if ($('.box').hasClass('active')) {
+                $('.box').removeClass('active')
+                }
+                else {
+                $('.box').addClass('active')
+                }
             })
                 
         </script>
