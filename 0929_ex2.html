@@ -62,11 +62,13 @@
             const theBox = $(".wrap td").index(this);
             console.log(theBox);
             $(`td:gt(${theBox})`).css("background", "lightblue");
-
+            // 模板字串
         })
 
-        // $('td:gt()').css("background", "b")
-
+        // $('td:gt()').css("background", "")
+        // js 字串(10) + 數字(1) 會變成101
+        // js 字串(10) - 數字(1) 會變成9 (可以正常相減)
+        
             
         </script>
 </body>
