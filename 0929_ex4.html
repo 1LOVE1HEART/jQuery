@@ -5,16 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .img-wrap {
+            border-radius: 50%;
+            overflow: hidden;
+            /* 預先設定邊框,避免點選增加邊框後,圖片大小改變 */
+            border: 3px solid transparent;
+
+        }
+        .img-wrap > img{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md">
+                <div class="img-wrap">
+                    <img src="./images/person1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md">
+                <div class="img-wrap">
+                    <img src="./images/person2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md">
+                <div class="img-wrap">
+                    <img src="./images/person3.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md">
+                <div class="img-wrap">
+                    <img src="./images/person4.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-md">
+                <div class="img-wrap">
+                    <img src="./images/person5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
     <script src="./js/jquery-3.6.1.min.js"></script>
         <script>
-            $("").click(function(){
+            $('.img-wrap').click(function () {
+            console.log('.img-wrap, this:', $(this));
 
-            })
-
-            // 練習4提示 :除了我以外 sibilings??
+            $(this).css('border', '3px solid red').parent().siblings().find('.img-wrap').css('border', '3px solid transparent');
+        })
         </script>
 </body>
 </html>
