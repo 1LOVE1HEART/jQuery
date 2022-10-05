@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+</head>
+<body>
+    <button data-anistr="bounce">click</button>
+    <button data-anistr="backInDown">click</button>
+    <button data-anistr="rotateOut">click</button>
+    <h1 class="animate__animated ">one LOVE one HEART</h1>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
+    <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            $('button').click(function () {
+            console.log('animate__', $(this).data('anistr'));
+            const aniStr = `animate__${$(this).data('anistr')}`;
+
+            $('h1').addClass(aniStr).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $(this).removeClass(aniStr);
+            })
+            
+            })
+
+            
+
+
+
+            // $('button').eq(0).click(function () {
+            //     $('h1').addClass('animate__bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            //         $(this).removeClass('animate__bounce');
+            //     })
+            // })
+
+            // $('button').eq(1).click(function () {
+            //     $('h1').addClass('animate__backInDown').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            //         $(this).removeClass('animate__backInDown');
+            //     })
+            // })
+
+            // $('button').eq(2).click(function () {
+            //     $('h1').addClass('animate__rotateOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            //         $(this).removeClass('animate__rotateOut');
+            //     })
+            // })
+        </script>
+
+</body>
+</html>
