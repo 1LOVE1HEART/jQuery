@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <style>
         .wrap {
@@ -12,6 +15,7 @@
             height: 400px;
             overflow: hidden;
             position: relative;
+            
         }
         .train {
             padding-left: 0;
@@ -20,6 +24,7 @@
             width: 500%;
             transform: translateX(0px);
             transition:  .4s;
+            margin: 0;
         }
         .train li img {
             width: 100%;
@@ -44,6 +49,36 @@
         .slider-dots li:nth-child(1){
             background-color: white;
         }
+
+        .page-left-area,
+        .page-right-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+            /* background-color: aqua; */
+            cursor: pointer;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .1s;
+        }
+
+        .page-left-area {
+            left: 0;
+        }
+
+        .page-right-area {
+            right: 0;
+        }
+
+        .page-left-area:hover,
+        .page-right-area:hover {
+            background-color: rgba(255, 255, 255, 0.355);
+        }
+
+
     </style>
 </head>
 <body>
@@ -64,26 +99,62 @@
             <li></li>
         </ul>
 
+        <div class="page-left-area">
+            <button class="btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="page-right-area">
+            <button class="btn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
         </div>
     </div>
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
     <script src="./js/jquery-3.6.1.min.js"></script>
         <script>
+            let nowPage = 0;
+
+
+            $('.page-right-area').click(function(){
+                nowPage++;
+                if (nowPage >= 5) {nowPage = 0};
+                pageMovement(nowPage);
+            }) 
+
+            $('.page-left-area').click(function(){
+                nowPage--;
+                if (nowPage <= 0) {nowPage = 0};
+                // console.log(typeof(nowPage));
+                pageMovement(nowPage * (-1));
+            })
+
             $(".slider-dots li").click(function(){
                 console.log($(this).index());
                 // index索引值
-                const index = $(this).index();
-                //移動量
-                const movex = -800 * index;
-                console.log(movex);
-
-                $(".train").css("transform", `translateX(${movex}px)`);
-
-                $(this).css('background', '#fff').siblings().css("background", "transparent");                
+                nowPage = $(this).index();
+                pageMovement(nowPage);
            
             })
+
+            function pageMovement(nowPage) {
+            const moveX = nowPage * -800;
+
+            $('.train').css('transform', `translateX(${moveX}px)`);
+
+            // $(this).css('background', '#fff').siblings().css("background", "transparent");
+
+            $('.slider-dots li').eq(nowPage).css('background', '#fff').siblings().css("background", "transparent");
+            }
             
         </script>
+
+        
+            <script>
+
+            </script>
 </body>
 </html>
