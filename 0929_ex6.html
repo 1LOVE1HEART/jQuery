@@ -123,13 +123,13 @@
                 nowPage++;
                 if (nowPage >= 5) {nowPage = 0};
                 pageMovement(nowPage);
+                // console.log(nowPage);
             }) 
 
             $('.page-left-area').click(function(){
                 nowPage--;
-                if (nowPage <= 0) {nowPage = 0};
-                // console.log(typeof(nowPage));
-                pageMovement(nowPage * (-1));
+                if (nowPage <= -1) {nowPage = 4};
+                pageMovement(nowPage);
             })
 
             $(".slider-dots li").click(function(){
