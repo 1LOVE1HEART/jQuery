@@ -53,7 +53,7 @@
         }
 
         function getRBGA() {
-            return `rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5)`
+            return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`
         }
 
         
@@ -61,11 +61,14 @@
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script> -->
     <script src="./js/jquery-3.6.1.min.js"></script>
         <script>
-            for (let i = 0; i < 4; i++) {
-                $('.color-select-area').append(`<div class="col-6 col-md-4 col-lg-3">
-                            <div class="color-selector autobg"></div>
-                        </div>`)
-                }
+           
+
+                for (let i = 0; i < 8; i++) {
+            $('.color-select-area').append(
+                `<div class="col-6 col-md-4 col-lg-3">
+                        <div class="color-selector autobg"></div>
+                </div>`)
+            }
 
             const elements = document.querySelectorAll('.autobg');
 
@@ -74,11 +77,19 @@
             });
 
             $('.color-select-area').on('click', '.color-selector', function () {
-                console.log('this', $(this).css('background-image'));
-                const backgroundImg = $(this).css('background-image');
-                $('.color-demo-area').css('background-image', backgroundImg);
+                console.log('this color', $(this).css('background'));
+                const backgroundImg = $(this).css('background');
+                $('.color-demo-area').css('background', backgroundImg);
+                // JQ沒有background-color,要用background or backgroundImage
             })
             
+            
+
+
+
+
+
+        
             
             
             
